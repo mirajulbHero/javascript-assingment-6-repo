@@ -3,3 +3,8 @@
     width: 1260px;
     margin: 0 auto;
 }
+
+/* hero area style */
+.hero-section {
+    background-color: gray;
+}
