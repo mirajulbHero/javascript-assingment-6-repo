@@ -5,7 +5,13 @@
 }
 
 
-/* hero area style */
+/* Choose Your Trees style */
+#categories-container p {
+    font-size: 16px;
+    color: black;
+    text-align: left;
+    margin-bottom: 8px;
+}
 #card-area{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
