@@ -4,7 +4,46 @@
     margin: 0 auto;
 }
 
+
 /* hero area style */
-.hero-section {
-    background-color: gray;
+#card-area{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 60%;
+}
+.card-area{
+    background-color: #ffffff;
+    padding: 12px;
+    border-radius: 10px;
+}
+.card-area img{
+    width: 300px;
+    height: 300px;
+}
+.card-area h3 {
+    margin-top: 10px;
+    font-family: inter;
+    font-weight: 600;
+    font-size: 14px;
+}
+.card-area p{
+    margin: 6px 0;
+    font-family: inter;
+    font-weight: 400;
+    font-size: 12px;
+}
+.card-area button{
+    background-color: #DCFCE7;
+    padding: 5px 15px;
+    border-radius: 25px;
+}
+.btn-price{
+    display: flex;
+    justify-content: space-between;
+}
+.card-area .add-btn{
+    background-color: green;
+    color: #ffffff;
+    margin-top: 10px;
+    width: 100%;
 }

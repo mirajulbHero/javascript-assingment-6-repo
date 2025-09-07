@@ -8,9 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!-- font awesome cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- daisyui link -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
@@ -30,7 +33,7 @@
                         <li><a href="#">Plant a Tree</a></li>
                     </ul>
                     </div>
-                    <a class="btn btn-ghost text-xl text-white ml-12">Green Earth</a>
+                    <a class="text-xl text-white ml-12 font-bold">Green Earth</a>
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal px-1 space-x-4 text-white">
@@ -47,10 +50,10 @@
         </nav>
     </header>
     <!-- hero section start -->
-     <section class="bg-[#CFF0DC] py-16">
+     <section class="bg-[#CFF0DC] pt-16">
         <div class="flex justify-around">
             <img class="bg-cover bg-left w-[400px] mt-[-65px]" src="images/hero-leaf1.png" alt="image">
-            <div class="text-center pt-6">
+            <div class="text-center">
                 <h2 class="text-4xl font-bold">Plant a Tree, Grow a Future</h2>
                 <p class="text-sm mt-2 mb-4">Join our mission to plant 1 million trees and make the Earth greener for <br> futuregenerations.</p>
                 <button class=" btn btn-active bg-[#FACC15] rounded-full mr-8 hover:bg-rose-500">Get Involved</button>
@@ -60,6 +63,31 @@
 
      </section>
 
-    
+     <!-- Choose Your Trees start -->
+      <section class="bg-[#F0FDF4]">
+        <h2 class="text-center pt-8 font-semibold">Choose Your Trees</h2>
+        <div class="flex justify-between mt-6">
+            <div class="caragories ml-12">
+                <p>Categories</p>
+            </div>
+            <div id="card-area">
+                <div class="card-area">
+                    <img src="images/about.png" alt="img">
+                    <h3>Mango Tree</h3>
+                    <p>A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
+                    <div class="btn-price">
+                        <button>Fruit Tree</button>
+                        <p><i class="fa fa-usd" aria-hidden="true"></i>500</p>
+                    </div> 
+                    <button class="add-btn">Add to Cart</button> 
+                </div>
+                
+            </div>
+            
+            <div class="cart-area mr-12">
+                <p>Your Cart</p>
+            </div>
+        </div>
+      </section>
 </body>
 </html>
