@@ -4,6 +4,7 @@ const loadCatagories = () => {
         .then (data => displayCategories(data.categories));
 };
 
+
 // const loadCard = (id) => {
 //     let url = `https://openapi.programming-hero.com/api/category/${id}`
 //     console.log(url)
@@ -16,14 +17,22 @@ const loadCatagories = () => {
 //     cardArea.innerHTML = '';
 //     for(const card of cards){
 //         console.log (card);
+//          const div = document.createElement('div');
+//          div.innerHTML = "";
+//          div.innerHTML = `
+//             <img src="${card.image}" alt="${card.plant_name}" class="w-full h-32 object-cover mb-2">
+//             <h3 class="font-bold">${card.plant_name}</h3>
+//             <p>Price: $${card.price}</p>
+//          `;
+//           cardArea.appendChild(div);
 //     }
 // }
- const loadCard = () => {
+ const loadPlants = () => {
     fetch("https://openapi.programming-hero.com/api/plants")
     .then (res => res.json())
     .then (data => displayCard (data.plants));
  }
- loadCard();
+ loadPlants();
 
 //  category:"Evergreen Tree"
 // description :"A tall, dense evergreen tree often planted for privacy screens. Its wood is resistant to decay and pests."
@@ -36,7 +45,6 @@ const loadCatagories = () => {
     const cardArea = document.getElementById('card-area');
     cardArea.innerHTML = '';
     for(const plant of plants){
-        console.log(plant);
         const card = document.createElement('div');
         card.innerHTML = `
             <div class="card-area">
@@ -59,12 +67,12 @@ const displayCategories = (categories) => {
     const categoriesContainer = document.getElementById('categories-container');
     categoriesContainer.innerHTML = '';
     for(categorie of categories){
-        const categoriesP = document.createElement('div');
-        categoriesP.innerHTML = `
-                    <p>${categorie.category_name}</p>
+        const categoriesPlants = document.createElement('div');
+        categoriesPlants.innerHTML = `
+                    <p onclick="loadLevelPlant('${categorie.id}')">${categorie.category_name}</p>
                     
         `
-        categoriesContainer.append(categoriesP);
+        categoriesContainer.append(categoriesPlants);
     }
 }
 
