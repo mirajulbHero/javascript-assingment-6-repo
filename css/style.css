@@ -6,15 +6,22 @@
 
 
 /* Choose Your Trees style */
+
+.Choose-area {
+    display: flex;
+    justify-content: space-between;
+}
 #categories-container p {
     font-size: 16px;
     color: black;
     text-align: left;
     margin-bottom: 8px;
 }
+
 #card-area{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
     max-width: 60%;
 }
 .card-area{
@@ -52,4 +59,13 @@
     color: #ffffff;
     margin-top: 10px;
     width: 100%;
+}
+.cart-area {
+  background-color: white;
+  width: 15%; 
+  padding: 12px;
+  border-radius: 10px;
+}
+.cart-area p {
+ font-weight: 600;
 }
