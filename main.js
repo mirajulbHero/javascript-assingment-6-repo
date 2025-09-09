@@ -4,19 +4,28 @@ const loadCatagories = () => {
         .then (data => displayCategories(data.categories));
 };
 
+const displayRemoveClass = () =>{
+    const categorieClass = document.querySelectorAll(".categori-btn");
+    categorieClass.forEach((btn) => btn.classList.remove('active'));
+}
 
 const loadLevelPlant = (id) => {
     let url = `https://openapi.programming-hero.com/api/category/${id}`
     // console.log(url)
     fetch(url)
     .then(res => res.json())
-    .then(data => displayLoadCard(data.plants));
+    .then(data => {
+        displayRemoveClass();
+        const categoriesBtn = document.getElementById(`categoriesBtn ${id}`);
+        categoriesBtn.classList.add('active');
+        displayLoadCard(data.plants)
+    });
 }
 const displayLoadCard = (plants) => {
     const cardArea = document.getElementById('card-area');
     cardArea.innerHTML = '';
     for(const plant of plants){
-        console.log (plant);
+        // console.log (plant);
          const div = document.createElement('div');
          div.innerHTML = "";
          div.innerHTML = `
@@ -76,7 +85,7 @@ const displayCategories = (categories) => {
     for(categorie of categories){
         const categoriesPlants = document.createElement('div');
         categoriesPlants.innerHTML = `
-                    <p onclick="loadLevelPlant('${categorie.id}')">${categorie.category_name}</p>
+                    <p id="categoriesBtn ${categorie.id}" class="categori-btn mb-9 text-white" onclick="loadLevelPlant('${categorie.id}')">${categorie.category_name}</p>
                     
         `
         categoriesContainer.append(categoriesPlants);

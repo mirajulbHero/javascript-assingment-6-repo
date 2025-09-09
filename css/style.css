@@ -4,6 +4,19 @@
     margin: 0 auto;
 }
 
+.mb-9 {
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-align: left;
+}
+.active{
+    background-color: blue;
+    padding: 7px 4px;
+    width: 100%;
+    border-radius: 10px;
+    color: #ffffff;!important
+}
+
 
 /* Choose Your Trees style */
 
@@ -16,6 +29,7 @@
     color: black;
     text-align: left;
     margin-bottom: 8px;
+    max-width: 100%;
 }
 
 #card-area{
