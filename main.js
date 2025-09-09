@@ -5,28 +5,35 @@ const loadCatagories = () => {
 };
 
 
-// const loadCard = (id) => {
-//     let url = `https://openapi.programming-hero.com/api/category/${id}`
-//     console.log(url)
-//     fetch(url)
-//     .then(res => res.json())
-//     .then(data => displayLoadCard(data));
-// }
-// const displayLoadCard = (cards) => {
-//     const cardArea = document.getElementById('card-area');
-//     cardArea.innerHTML = '';
-//     for(const card of cards){
-//         console.log (card);
-//          const div = document.createElement('div');
-//          div.innerHTML = "";
-//          div.innerHTML = `
-//             <img src="${card.image}" alt="${card.plant_name}" class="w-full h-32 object-cover mb-2">
-//             <h3 class="font-bold">${card.plant_name}</h3>
-//             <p>Price: $${card.price}</p>
-//          `;
-//           cardArea.appendChild(div);
-//     }
-// }
+const loadLevelPlant = (id) => {
+    let url = `https://openapi.programming-hero.com/api/category/${id}`
+    // console.log(url)
+    fetch(url)
+    .then(res => res.json())
+    .then(data => displayLoadCard(data.plants));
+}
+const displayLoadCard = (plants) => {
+    const cardArea = document.getElementById('card-area');
+    cardArea.innerHTML = '';
+    for(const plant of plants){
+        console.log (plant);
+         const div = document.createElement('div');
+         div.innerHTML = "";
+         div.innerHTML = `
+            <div class="card-area">
+                    <img src="${plant.image}">
+                    <h3>${plant.name}</h3>
+                    <p>${plant.description}</p>
+                    <div class="btn-price">
+                        <button>${plant.category}</button>
+                        <p><i class="fa fa-usd" aria-hidden="true"></i>${plant.price}</p>
+                    </div> 
+                    <button class="add-btn">Add to Cart</button> 
+            </div>
+         `;
+          cardArea.appendChild(div);
+    }
+}
  const loadPlants = () => {
     fetch("https://openapi.programming-hero.com/api/plants")
     .then (res => res.json())
@@ -56,7 +63,7 @@ const loadCatagories = () => {
                         <p><i class="fa fa-usd" aria-hidden="true"></i>${plant.price}</p>
                     </div> 
                     <button class="add-btn">Add to Cart</button> 
-                </div>
+            </div>
         
         `
         cardArea.append(card);
