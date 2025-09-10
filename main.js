@@ -31,7 +31,7 @@ const displayLoadCard = (plants) => {
          div.innerHTML = `
             <div class="card-area">
                     <img src="${plant.image}">
-                    <h3>${plant.name}</h3>
+                    <h3 onclick="loadPlantDetails(${plant.id})">${plant.name}</h3>
                     <p>${plant.description}</p>
                     <div class="btn-price">
                         <button>${plant.category}</button>
@@ -50,6 +50,34 @@ const displayLoadCard = (plants) => {
  }
  loadPlants();
 
+//   display details
+const loadPlantDetails = async (id) => {
+    const url = `https://openapi.programming-hero.com/api/plant/${id}`;
+    const res = await fetch(url);
+    const details = await res.json();
+    displayPlantDetails(details.plants);
+}
+const displayPlantDetails = (plant) => {
+    console.log(plant)
+    const detailsBox = document.getElementById('details_container');
+    detailsBox.innerHTML = `
+                <div>
+                    <img class ="" src="${plant.image}">
+                </div>
+                <div>
+                    <h2 class="font-semibold">Categories:<span class ="text-[12px] ml-[5px] text-[gray]">${plant.category}</span></h2>
+                </div>
+                <div>
+                    <h2 class="font-semibold">Price:<span class ="text-[12px] ml-[5px] text-[gray] my-8">${plant.price}</span></h2>
+                </div>
+                <div>
+                    <h2 class="font-semibold">Descriptions:<span class ="text-[12px] ml-[5px] text-[gray]">${plant.description}</span></h2>
+                </div>
+
+    `
+    document.getElementById('my_modal_5').showModal();
+}
+
 //  category:"Evergreen Tree"
 // description :"A tall, dense evergreen tree often planted for privacy screens. Its wood is resistant to decay and pests."
 // id: 17
@@ -65,7 +93,7 @@ const displayLoadCard = (plants) => {
         card.innerHTML = `
             <div class="card-area">
                     <img src="${plant.image}">
-                    <h3>${plant.name}</h3>
+                    <h3 onclick="loadPlantDetails(${plant.id})">${plant.name}</h3>
                     <p>${plant.description}</p>
                     <div class="btn-price">
                         <button>${plant.category}</button>
