@@ -1,4 +1,5 @@
 const loadCatagories = () => {
+    manegeSpiner(true)
     fetch("https://openapi.programming-hero.com/api/categories")
         .then(res => res.json())
         .then (data => displayCategories(data.categories));
@@ -10,6 +11,7 @@ const displayRemoveClass = () =>{
 }
 
 const loadLevelPlant = (id) => {
+    manegeSpiner(true)
     let url = `https://openapi.programming-hero.com/api/category/${id}`
     // console.log(url)
     fetch(url)
@@ -42,6 +44,7 @@ const displayLoadCard = (plants) => {
          `;
           cardArea.appendChild(div);
     }
+    manegeSpiner(false)
 }
  const loadPlants = () => {
     fetch("https://openapi.programming-hero.com/api/plants")
@@ -78,6 +81,19 @@ const displayPlantDetails = (plant) => {
     document.getElementById('my_modal_5').showModal();
 }
 
+
+// manage spinner
+const manegeSpiner = (status) =>{
+    if(status == true){
+        document.getElementById('spinner').classList.remove('hidden');
+        document.getElementById('card-area').classList.add('hidden');
+    }
+    else{
+        document.getElementById('card-area').classList.remove('hidden');
+        document.getElementById('spinner').classList.add('hidden'); 
+    }
+}
+
 //  category:"Evergreen Tree"
 // description :"A tall, dense evergreen tree often planted for privacy screens. Its wood is resistant to decay and pests."
 // id: 17
@@ -105,6 +121,7 @@ const displayPlantDetails = (plant) => {
         `
         cardArea.append(card);
     }
+    manegeSpiner(false)
  }
 
 const displayCategories = (categories) => {
@@ -113,11 +130,12 @@ const displayCategories = (categories) => {
     for(categorie of categories){
         const categoriesPlants = document.createElement('div');
         categoriesPlants.innerHTML = `
-                    <p id="categoriesBtn ${categorie.id}" class="categori-btn mb-9 text-white" onclick="loadLevelPlant('${categorie.id}')">${categorie.category_name}</p>
+                    <p id="categoriesBtn ${categorie.id}" class="hover:bg-blue-400 hover:text-[#fff] categori-btn mb-9 text-white" onclick="loadLevelPlant('${categorie.id}')">${categorie.category_name}</p>
                     
         `
         categoriesContainer.append(categoriesPlants);
     }
+    // manegeSpiner(true)
 }
 
 loadCatagories ();
