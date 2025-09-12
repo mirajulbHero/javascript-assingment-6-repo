@@ -11,7 +11,7 @@ const displayRemoveClass = () =>{
 }
 
 const loadLevelPlant = (id) => {
-    manegeSpiner(true)
+    manegeSpiner(true);
     let url = `https://openapi.programming-hero.com/api/category/${id}`
     // console.log(url)
     fetch(url)
@@ -39,7 +39,7 @@ const displayLoadCard = (plants) => {
                         <button>${plant.category}</button>
                         <p><i class="fa fa-usd" aria-hidden="true"></i>${plant.price}</p>
                     </div> 
-                    <button class="add-btn">Add to Cart</button> 
+                    <button onclick ="addToCart('${plant.name}', ${plant.price})" class="add-btn">Add to Cart</button> 
             </div>
          `;
           cardArea.appendChild(div);
@@ -61,7 +61,6 @@ const loadPlantDetails = async (id) => {
     displayPlantDetails(details.plants);
 }
 const displayPlantDetails = (plant) => {
-    console.log(plant)
     const detailsBox = document.getElementById('details_container');
     detailsBox.innerHTML = `
                 <div>
@@ -115,7 +114,7 @@ const manegeSpiner = (status) =>{
                         <button>${plant.category}</button>
                         <p><i class="fa fa-usd" aria-hidden="true"></i>${plant.price}</p>
                     </div> 
-                    <button class="add-btn">Add to Cart</button> 
+                    <button onclick ="addToCart('${plant.name}', ${plant.price})" class="add-btn add-button">Add to Cart</button> 
             </div>
         
         `
@@ -123,6 +122,45 @@ const manegeSpiner = (status) =>{
     }
     manegeSpiner(false)
  }
+
+ // Add to cart function
+
+let total = 0;
+
+function updateTotal(price) {
+    total += price;
+    document.getElementById("totalPrice").innerText = total;
+}
+ const addToCart = (name, price) =>{
+     alert(`${name} has been added to the Cart`);
+    const cartContainer = document.getElementById('cardContainer');
+            const cartItem = document.createElement('div');
+            cartItem.innerHTML = `
+                     <div id="cart_list" class="cart flex justify-between items-center bg-gray-200 mt-4 p-2 rounded">
+                        <div class="cart-info-left">
+                            <h3>${name}</h3>
+                            <p><i class="fa fa-usd" aria-hidden="true"></i>${price}</p>
+                        </div>
+                        <div id="crossBtn" onclick="removeFromCart(this, ${price})" class="cart-info-right">
+                            <p>❌</p>
+                        </div>
+                    </div>
+            
+            
+            `
+            cartContainer.append(cartItem);
+            updateTotal (price);
+    };
+
+    function removeFromCart(button,price) {
+    button.parentElement.remove(); 
+    total -= price; 
+    document.getElementById("totalPrice").innerText = total;
+  }
+
+  // cart function end 
+ 
+
 
 const displayCategories = (categories) => {
     const categoriesContainer = document.getElementById('categories-container');
@@ -139,3 +177,4 @@ const displayCategories = (categories) => {
 }
 
 loadCatagories ();
+

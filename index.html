@@ -63,7 +63,7 @@
       <section class="bg-[#F0FDF4]">
         <h2 class="text-center pt-8 font-bold text-xl">Choose Your Trees</h2>
         <div id="spinner" class="spinner flex justify-center items-center mt-8 hidden">
-            <span class="loading loading-bars loading-xl"></span>
+            <span class="loading loading-dots loading-xl"></span>
         </div>
         <div class=" Choose-area mt-6">
             <div  class="caragories ml-12">
@@ -82,13 +82,26 @@
                         <button>Fruit Tree</button>
                         <p><i class="fa fa-usd" aria-hidden="true"></i>500</p>
                     </div> 
-                    <button class="add-btn">Add to Cart</button> 
+                    <button  class="add-btn">Add to Cart</button> 
                 </div> -->
                 
             </div>
             
             <div class="cart-area mr-12 text-left">
                 <p>Your Cart</p>
+                <div id="cardContainer">
+                    <!-- <div id="cart_list" class="cart flex justify-between items-center bg-gray-200 mt-4 p-2 rounded">
+                        <div class="cart-info-left">
+                            <h3>Title</h3>
+                            <p><i class="fa fa-usd" aria-hidden="true"></i>price</p>
+                        </div>
+                        <div class="cart-info-right">
+                            <p>❌</p>
+                        </div>
+                    </div> -->
+                </div>
+                
+                <h3 class="font-bold text-right mt-4">Total Price: $<span id="totalPrice">0</span></h3>
             </div>
         </div>
       </section>
@@ -122,6 +135,7 @@
         </div>
 
        </section>
+       
 
       <script src="main.js"></script>
 </body>
