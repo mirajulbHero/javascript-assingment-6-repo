@@ -107,6 +107,7 @@
 /* about-campaign area start */
 #about-campaign {
     margin-top: 80px;
+    padding-bottom: 30px;
 }
 #about-campaign h2{
     text-align: center;
@@ -153,6 +154,7 @@
     font-size: 30px;
     font-weight: bold;
     color: #419861;
+    margin-bottom: 15px;
 }
 .impact-card p{
     font-size: 14px;
@@ -165,4 +167,48 @@
     margin-right: 20px;
     margin-top: 20px;
     border-radius: 10px;
+}
+
+/* plant a Tree area */
+#tree-ara {
+    text-align: center;
+    padding: 40px 0;
+    color: white;
+} 
+#tree-ara h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+/* .form-area {
+    
+
+} */
+form {
+    width: 300px;
+    /* background-color: #148353; */
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+}
+form input {
+    margin: 5px 0;
+    display: block;
+    background-color: #fff;
+    color: black;
+    width: 100%;
+    padding: 7px;
+    border-radius: 5px;
+}
+.form-area button {
+    background-color: #FACC15;
+    width: 100%;
+    padding: 3px;
+    color: black;
+    border-radius: 10px;
+}
+/* footer area style */
+footer {
+    padding: 15px 0;
+    text-align: center;
+    color: white;
 }
