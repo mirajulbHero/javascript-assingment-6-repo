@@ -1,0 +1,84 @@
+
+
+@media screen and (max-width: 576px) {
+/* hero are responsive */
+    #hero-area {
+        display: block;
+        justify-content: start;
+
+    }
+    #hero-area img{
+        display: none;
+    }
+    #hero-area h2 {
+        font-size: 25px;
+    }
+    #hero-area  button{
+        margin-bottom: 30px;
+    }
+
+    /* card are responsive */
+    .Choose-area {
+         display: block;
+         text-align: center;
+    
+    }
+    #categories-container {
+        text-align: left;
+    }
+    .caragories {
+        margin-left: 0;
+    }
+    #card-area{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-left: 80px;
+    }
+    .card-area img{
+        
+        width: 100%;
+        height: auto;
+    }
+    .cart-area {
+        width: 60%;
+        margin-left: calc(2.8rem + 40px);
+        /* margin-left: 2.90rem; */
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+    /* about area responsive */
+    #about-campaign {
+        margin-top: 30px;
+    }
+    .about-campaign-area{
+        display: block;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .about-descripetion {
+        margin-top: 15px;
+    }
+
+    /* impact area responsive */
+    .impact-card {
+        display: block;
+        text-align: center;
+        margin-left: 40px;
+    }
+    .card-1,.card-2,.card-3 {
+        width: 100%;
+        background-color: #fff;
+        text-align: center;
+        padding: 15px;
+        margin-right: 20px;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+
+   
+    
+};
